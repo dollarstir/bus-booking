@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:path/path.dart';
 
 class InitialApp extends StatefulWidget {
   InitialApp({Key key}) : super(key: key);
@@ -92,10 +93,11 @@ class _InitialAppState extends State<InitialApp> {
                           onTap: () async {
 
                             var box = Hive.box("booking");
-                                    box.put("firstrun", 1);
+                                    // box.put("firstrun", 1);
                                     // box.put("isagreed", true);
-                             Route route = MaterialPageRoute(builder: (c) => LoginPage());
-                               Navigator.push(context, route);
+                             Route route =
+                          MaterialPageRoute(builder: (Context) => LoginPage());
+                      Navigator.pushReplacement(context, route);
                           },
                           child: Container(
                               //padding: EdgeInsets.all(20),

@@ -14,9 +14,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text("LoginPage"),
       ),
-      body: Center(
-        child: Text("Login Page"),
-      ),
+      body: SafeArea(child: Text('Welcome')),
     );
     
   }
