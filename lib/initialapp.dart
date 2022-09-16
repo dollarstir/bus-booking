@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InitialApp extends StatefulWidget {
   InitialApp({Key key}) : super(key: key);
@@ -28,11 +31,7 @@ class _InitialAppState extends State<InitialApp> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // ClipRRect(
-                        //   borderRadius: BorderRadius.circular(20.0),
-                        //   child: Image.asset('assets/images/bus2.jpg', width: 150,
-                        //   height: 200,),
-                        // ),
+                        
                         Container(
                           padding: EdgeInsets.all(15),
                           width: MediaQuery.of(context).size.width * 0.4,
@@ -90,6 +89,10 @@ class _InitialAppState extends State<InitialApp> {
                             height: MediaQuery.of(context).size.height * 0.15),
                         GestureDetector(
                           onTap: () async {
+
+                            var box = Hive.box("booking");
+                                    box.put("firstrun", 1);
+                                    box.put("isagreed", true);
                             //  Route route = MaterialPageRoute(builder: (c) => InitialTanx());
                             //    Navigator.push(context, route);
                           },
