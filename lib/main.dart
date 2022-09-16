@@ -18,7 +18,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   final dir = await path.getApplicationDocumentsDirectory();
   Hive.init(dir.path);
-  await Hive.openBox("icousel");
+  await Hive.openBox("booking");
 
   AwesomeNotifications().initialize('resource://drawable/res_notification', [
     NotificationChannel(
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
 
   Widget pageChecher(){
-  var box =  Hive.box('icousel');
+  var box =  Hive.box('booking');
     // var firstTime = box.get("firstTime");
     var islogin =  box.get("islog");
     var isfirstime =  box.get("firstrun");
