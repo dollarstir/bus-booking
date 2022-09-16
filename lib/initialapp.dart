@@ -1,3 +1,4 @@
+import 'package:booking/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -92,9 +93,9 @@ class _InitialAppState extends State<InitialApp> {
 
                             var box = Hive.box("booking");
                                     box.put("firstrun", 1);
-                                    box.put("isagreed", true);
-                            //  Route route = MaterialPageRoute(builder: (c) => InitialTanx());
-                            //    Navigator.push(context, route);
+                                    // box.put("isagreed", true);
+                             Route route = MaterialPageRoute(builder: (c) => LoginPage());
+                               Navigator.push(context, route);
                           },
                           child: Container(
                               //padding: EdgeInsets.all(20),
