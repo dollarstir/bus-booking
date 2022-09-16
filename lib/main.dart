@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return MaterialApp(
-      title: 'Icounsel-Gh',
+      title: 'Bus & Flight Booking',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
     //     textTheme: GoogleFonts.latoTextTheme(
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
       
       home:AnimatedSplashScreen(
             duration: 3000,
-            splash: Image.asset('assets/images/logo.png',width: double.infinity,height: 500,),
+            splash: Image.asset('assets/images/bus5.png',width: double.infinity,height: 500,),
             nextScreen:pageChecher(),
             splashTransition: SplashTransition.scaleTransition,
             // pageTransitionType: pageTransitionTy

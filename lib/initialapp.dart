@@ -38,7 +38,7 @@ class _InitialAppState extends State<InitialApp> {
                           padding: EdgeInsets.all(15),
                           width: MediaQuery.of(context).size.width * 0.4,
                           height: MediaQuery.of(context).size.height * 0.4,
-                          child:Image.asset('assets/images/bus2.jpg',fit: BoxFit.contain,),
+                          child:Image.asset('assets/images/bus2.png',fit: BoxFit.contain,),
                           decoration: new BoxDecoration(
                             border: Border.all(width: 2,color: Theme.of(context).accentColor),
                             // color: Colors.orange,
