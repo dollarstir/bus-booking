@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future ads() async {
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
     var userid = box.get("userid");
     String blurl = "https://icounselgh.net/ads";
     var response = await http.post(Uri.parse(blurl), body: {
@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Stream.periodic(Duration(seconds: 5)).asyncMap((_) => ncount());
 
   static Future<int> ncount() async {
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
     var userid = box.get("userid");
     var userlink = "https://icounselgh.net/ncount";
     try {
@@ -493,7 +493,7 @@ class _HomeState extends State<Home> {
   //   return couns;
   // }
   Future ptest() async {
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
     var userid = box.get("userid");
     var userlink = "https://icounselgh.net/ptest";
     var response = await http.post(
@@ -513,7 +513,7 @@ class _HomeState extends State<Home> {
     }
 
   Future ads() async {
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
     var userid = box.get("userid");
     String blurl = "https://icounselgh.net/ads";
     var response = await http.post(Uri.parse(blurl), body: {
@@ -1193,7 +1193,7 @@ class CounsellorTile extends StatelessWidget {
     }
 
     Future cftest() async {
-      var box = Hive.box("icousel");
+      var box = Hive.box("booking");
       var userid = box.get("userid");
       var userlink = "https://icounselgh.net/cftest.php";
       var response = await http.post(
