@@ -711,7 +711,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/idis.png',
+                    image: 'assets/images/awa.png',
                     onTap: () {
                       // Route route = MaterialPageRoute(
                       //   builder: (c) => Discover(),
@@ -757,7 +757,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/creg.png',
+                    image: 'assets/images/stc.png',
                     onTap: () {
                       // Route route =
                       //     MaterialPageRoute(builder: (c) => Cregister());
@@ -771,7 +771,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/tq.png',
+                    image: 'assets/images/vip.png',
                     onTap: () {
                       // Route route =
                       //     MaterialPageRoute(builder: (c) => QuoteScreen());
@@ -785,7 +785,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/ccon.png',
+                    image: 'assets/images/oa.png',
                     onTap: () {
                       // Route route =
                       //     MaterialPageRoute(builder: (c) => Cconnect());
