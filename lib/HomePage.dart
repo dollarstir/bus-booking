@@ -696,7 +696,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/cs.png',
+                    image: 'assets/images/ps.png',
                     onTap: () {
                       // Route route = MaterialPageRoute(
                       //   builder: (c) => InstantSessionPage(),
