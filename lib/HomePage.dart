@@ -799,7 +799,7 @@ class _HomeState extends State<Home> {
                     context,
                     height: screenheight,
                     width: screenwidth,
-                    image: 'assets/images/ttalk.png',
+                    image: 'assets/images/metro.png',
                     onTap: () {
                       // Route route = MaterialPageRoute(builder: (c) => Ttalk());
                       // Navigator.push(context, route);
