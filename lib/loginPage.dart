@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future user() async {
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
     var userid = box.get("userid");
     var userlink = "https://icounselgh.net/user";
     var response = await http.post(

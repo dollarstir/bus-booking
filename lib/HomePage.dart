@@ -6,8 +6,8 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-// import 'package:icounselgh/BookSection.dart';
-// import 'package:icounselgh/ReviewPage.dart';
+import './loginPage.dart';
+import './choose.dart';
 import './activity.dart';
 
 import './profilepage.dart';
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Myprofile(),
   ];
   int selectedIndex = 0;
-  Box hiveBox = Hive.box("icousel");
+  Box hiveBox = Hive.box("booking");
 
   void onTabTapped(int index) {
     setState(() {
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
       print('Current version : ' + event);
 
       if(event == 'update available'){
-        creatNotificationupdate();
+        // creatNotificationupdate();
       }
       
     });
@@ -429,8 +429,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 IconButton(
                   icon: Icon(Icons.notifications, color: Color(0xffcec7c2)),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Mnotify()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => Mnotify()));
                   },
                 ),
                 Positioned(
@@ -671,8 +671,8 @@ class _HomeState extends State<Home> {
           left: screenwidth * 0.12,
           child: GestureDetector(
             onTap: () async {
-              Route route = MaterialPageRoute(builder: (c) => fdb());
-              Navigator.push(context, route);
+              // Route route = MaterialPageRoute(builder: (c) => fdb());
+              // Navigator.push(context, route);
             },
             child: Image.asset(
               "assets/images/motto.png",
@@ -698,10 +698,10 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/cs.png',
                     onTap: () {
-                      Route route = MaterialPageRoute(
-                        builder: (c) => InstantSessionPage(),
-                      );
-                      Navigator.push(context, route);
+                      // Route route = MaterialPageRoute(
+                      //   builder: (c) => InstantSessionPage(),
+                      // );
+                      // Navigator.push(context, route);
                     },
                   ),
                   SizedBox(
@@ -713,10 +713,10 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/idis.png',
                     onTap: () {
-                      Route route = MaterialPageRoute(
-                        builder: (c) => Discover(),
-                      );
-                      Navigator.push(context, route);
+                      // Route route = MaterialPageRoute(
+                      //   builder: (c) => Discover(),
+                      // );
+                      // Navigator.push(context, route);
                       //   SweetAlert.show(
                       //     context,
                       //     title: "Loading ..",
@@ -759,9 +759,9 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/creg.png',
                     onTap: () {
-                      Route route =
-                          MaterialPageRoute(builder: (c) => Cregister());
-                      Navigator.push(context, route);
+                      // Route route =
+                      //     MaterialPageRoute(builder: (c) => Cregister());
+                      // Navigator.push(context, route);
                     },
                   ),
                   SizedBox(
@@ -773,9 +773,9 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/tq.png',
                     onTap: () {
-                      Route route =
-                          MaterialPageRoute(builder: (c) => QuoteScreen());
-                      Navigator.push(context, route);
+                      // Route route =
+                      //     MaterialPageRoute(builder: (c) => QuoteScreen());
+                      // Navigator.push(context, route);
                     },
                   ),
                   SizedBox(
@@ -787,9 +787,9 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/ccon.png',
                     onTap: () {
-                      Route route =
-                          MaterialPageRoute(builder: (c) => Cconnect());
-                      Navigator.push(context, route);
+                      // Route route =
+                      //     MaterialPageRoute(builder: (c) => Cconnect());
+                      // Navigator.push(context, route);
                     },
                   ),
                   SizedBox(
@@ -801,8 +801,8 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/ttalk.png',
                     onTap: () {
-                      Route route = MaterialPageRoute(builder: (c) => Ttalk());
-                      Navigator.push(context, route);
+                      // Route route = MaterialPageRoute(builder: (c) => Ttalk());
+                      // Navigator.push(context, route);
                     },
                   ),
                 ],
@@ -816,160 +816,25 @@ class _HomeState extends State<Home> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // SingleChildScrollView(
-
-        //   child:
-        //       // CounsellorTile(),
-        //       // CounsellorTile(),
-        //       Expanded(child: CounsellorTile()),
-
-        // ),
+       
 
         SizedBox(height: screenheight * 0.01),
-        // Text("    Our Services"),
-        // SizedBox(width: 20),
+        // 
         SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Center(
             child: Wrap(
               children: [
-                // GestureDetector(
-                //   onTap: () {
-                //     Route route =
-                //         MaterialPageRoute(builder: (c) => BookSession());
-                //     Navigator.push(context, route);
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.red,
-                //     ),
-                //     child: Column(
-                //         mainAxisAlignment: MainAxisAlignment.center,
-                //         children: [
-                //           Row(
-                //             mainAxisAlignment: MainAxisAlignment.center,
-                //             children: [
-                //               Icon(
-                //                 Icons.person,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.arrow_forward,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.date_range,
-                //                 color: Colors.white,
-                //               ),
-                //             ],
-                //           ),
-                //           SizedBox(height: 10),
-                //           Text("Book a session",
-                //               style: TextStyle(
-                //                   color: Colors.white,
-                //                   fontSize: 12,
-                //                   fontWeight: FontWeight.w500))
-                //         ]),
-                //   ),
-                // ),
-                // GestureDetector(
-                //   onTap: () {
-                //     Route route =
-                //         MaterialPageRoute(builder: (c) => InstantSessionPage());
-                //     Navigator.push(context, route);
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.cyan,
-                //     ),
-                //     child: Column(
-                //         mainAxisAlignment: MainAxisAlignment.center,
-                //         children: [
-                //           Row(
-                //             mainAxisAlignment: MainAxisAlignment.center,
-                //             children: [
-                //               Icon(
-                //                 Icons.person,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.data_usage,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.person,
-                //                 color: Colors.white,
-                //               ),
-                //             ],
-                //           ),
-                //           SizedBox(height: 10),
-                //           Text("Start an instant\n session",
-                //               style: TextStyle(
-                //                   color: Colors.white,
-                //                   fontSize: 12,
-                //                   fontWeight: FontWeight.w500))
-                //         ]),
-                //   ),
-                // ),
+                
 
                 SizedBox(height: 20),
-                // GestureDetector(
-                //   onTap: () {
-                //     Route route =
-                //         MaterialPageRoute(builder: (c) => InstantSessionPage());
-                //     Navigator.push(context, route);
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.red,
-                //     ),
-                //     child: Column(
-                //         mainAxisAlignment: MainAxisAlignment.center,
-                //         children: [
-                //           Row(
-                //             mainAxisAlignment: MainAxisAlignment.center,
-                //             children: [
-                //               Icon(
-                //                 Icons.person,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.arrow_forward,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.date_range,
-                //                 color: Colors.white,
-                //               ),
-                //             ],
-                //           ),
-                //           SizedBox(height: 10),
-                //           Text("Start instant session",
-                //               style: TextStyle(
-                //                   color: Colors.white,
-                //                   fontSize: 12,
-                //                   fontWeight: FontWeight.w500))
-                //         ]),
-                //   ),
-                // ),
+                //
 
                 GestureDetector(
                   onTap: () {
-                    Route route =
-                        MaterialPageRoute(builder: (c) => InstantSessionPage());
-                    Navigator.push(context, route);
+                    // Route route =
+                    //     MaterialPageRoute(builder: (c) => InstantSessionPage());
+                    // Navigator.push(context, route);
                   },
                   child: Card(
                     elevation: 10,
@@ -1017,9 +882,9 @@ class _HomeState extends State<Home> {
                         style: SweetAlertStyle.error,
                       );
                     } else if (repo == "approved") {
-                      Navigator.of(context).pop();
-                      Route route = MaterialPageRoute(builder: (c) => Ctest());
-                      Navigator.push(context, route);
+                      // Navigator.of(context).pop();
+                      // Route route = MaterialPageRoute(builder: (c) => Ctest());
+                      // Navigator.push(context, route);
                     } else if (repo == "sent") {
                       SweetAlert.show(
                         context,
@@ -1099,9 +964,9 @@ class _HomeState extends State<Home> {
 
                 GestureDetector(
                   onTap: () {
-                    Route route =
-                        MaterialPageRoute(builder: (c) => InstantSessionPage());
-                    Navigator.push(context, route);
+                    // Route route =
+                    //     MaterialPageRoute(builder: (c) => InstantSessionPage());
+                    // Navigator.push(context, route);
                   },
                   child: Card(
                     elevation: 10,
@@ -1127,55 +992,12 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                // GestureDetector(
-                //   onTap: () {
-                //     Route route =
-                //         MaterialPageRoute(builder: (c) => BookSession());
-                //     Navigator.push(context, route);
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.red,
-                //     ),
-                //     child: Column(
-                //         mainAxisAlignment: MainAxisAlignment.center,
-                //         children: [
-                //           Row(
-                //             mainAxisAlignment: MainAxisAlignment.center,
-                //             children: [
-                //               Icon(
-                //                 Icons.person,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.arrow_forward,
-                //                 color: Colors.white,
-                //               ),
-                //               Icon(
-                //                 Icons.date_range,
-                //                 color: Colors.white,
-                //               ),
-                //             ],
-                //           ),
-                //           SizedBox(height: 10),
-                //           Text("Register as a Counsellor",
-                //               style: TextStyle(
-                //                   color: Colors.white,
-                //                   fontSize: 12,
-                //                   fontWeight: FontWeight.w500))
-                //         ]),
-                //   ),
-                // ),
-
+                // 
                 GestureDetector(
                   onTap: () {
-                    Route route =
-                        MaterialPageRoute(builder: (c) => QuoteScreen());
-                    Navigator.push(context, route);
+                    // Route route =
+                    //     MaterialPageRoute(builder: (c) => QuoteScreen());
+                    // Navigator.push(context, route);
                   },
                   child: Card(
                     elevation: 10,
@@ -1192,49 +1014,19 @@ class _HomeState extends State<Home> {
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                         color: Colors.white,
                       ),
-                      // child: Image(
-                      //   image: AssetImage(
-                      //       "assets/images/gt.png"),
-                      //   // fit: BoxFit.cover,
-                      //   alignment: Alignment.topCenter,
-                      // ),
+                      //
                     ),
                   ),
                 ),
-                //  GestureDetector(
-                //     onTap: () {
-                //       Route route =
-                //           MaterialPageRoute(builder: (c) => QuoteScreen());
-                //       Navigator.push(context, route);
-                //     },
-                //     child: Container(
-                //       height: 80,
-                //       margin: EdgeInsets.only(left: 10, top: 10),
-                //       width: 150,
-                //       decoration: BoxDecoration(
-                //         image: DecorationImage(
-                //           image: AssetImage('assets/images/ttk.jpg'),
-                //           fit: BoxFit.cover,
-                //         ),
-                //         borderRadius: BorderRadius.all(Radius.circular(10)),
-                //         color: Colors.purple,
-                //       ),
-                //       // child: Image(
-                //       //   image: AssetImage(
-                //       //       "assets/images/gt.png"),
-                //       //   // fit: BoxFit.cover,
-                //       //   alignment: Alignment.topCenter,
-                //       // ),
-                //     ),
-                //   ),
+                // 
 
                 SizedBox(height: 10),
 
                 GestureDetector(
                   onTap: () {
-                    Route route =
-                        MaterialPageRoute(builder: (c) => QuoteScreen());
-                    Navigator.push(context, route);
+                    // Route route =
+                    //     MaterialPageRoute(builder: (c) => QuoteScreen());
+                    // Navigator.push(context, route);
                   },
                   child: Card(
                     elevation: 10,
@@ -1251,100 +1043,17 @@ class _HomeState extends State<Home> {
                         borderRadius: BorderRadius.all(Radius.circular(50)),
                         color: Colors.white,
                       ),
-                      // child: Image(
-                      //   image: AssetImage(
-                      //       "assets/images/gt.png"),
-                      //   // fit: BoxFit.cover,
-                      //   alignment: Alignment.topCenter,
-                      // ),
+                      
                     ),
                   ),
                 ),
-                // GestureDetector(
-                //   onTap: () {
-                //     Route route =
-                //         MaterialPageRoute(builder: (c) => QuoteScreen());
-                //     Navigator.push(context, route);
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       image: DecorationImage(
-                //         image: AssetImage('assets/images/gt.png'),
-                //         fit: BoxFit.cover,
-                //       ),
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.purple,
-                //     ),
-                //     // child: Image(
-                //     //   image: AssetImage(
-                //     //       "assets/images/gt.png"),
-                //     //   // fit: BoxFit.cover,
-                //     //   alignment: Alignment.topCenter,
-                //     // ),
-                //   ),
-                // ),
-                // GestureDetector(
-                //   onTap: () async {
-                //     SweetAlert.show(
-                //       context,
-                //       title: "Loading ..",
-                //       subtitle: "Please wait...",
-                //       style: SweetAlertStyle.loading,
-                //     );
-
-                //     var repo = await ptest();
-
-                //     print(repo);
-
-                //     if (repo == "pending") {
-                //       SweetAlert.show(
-                //         context,
-                //         title: "Welcome!",
-                //         subtitle: "Your request is under review",
-                //         style: SweetAlertStyle.error,
-                //       );
-                //     } else if (repo == "approved") {
-                //       Navigator.of(context).pop();
-                //       Route route = MaterialPageRoute(builder: (c) => Ctest());
-                //       Navigator.push(context, route);
-                //     } else if (repo == "sent") {
-                //       SweetAlert.show(
-                //         context,
-                //         title: "Congrats!!",
-                //         subtitle: 'Your request is being proccessed',
-                //         style: SweetAlertStyle.success,
-                //       );
-                //     } else if (repo == "failed") {}
-                //   },
-                //   child: Container(
-                //     height: 80,
-                //     margin: EdgeInsets.only(left: 10, top: 10),
-                //     width: 150,
-                //     decoration: BoxDecoration(
-                //       image: DecorationImage(
-                //         image: AssetImage('assets/images/gp.png'),
-                //         fit: BoxFit.cover,
-                //       ),
-                //       borderRadius: BorderRadius.all(Radius.circular(10)),
-                //       color: Colors.black,
-                //     ),
-                //     // child:  Image(
-                //     //   image: AssetImage(
-                //     //       "assets/images/gp.png"),
-                //     //   // fit: BoxFit.contain,
-                //     //   alignment: Alignment.topCenter,
-                //     // ),
-                //   ),
-                // ),
+                
 
                 GestureDetector(
                   onTap: () {
-                    Route route =
-                        MaterialPageRoute(builder: (c) => QuoteScreen());
-                    Navigator.push(context, route);
+                    // Route route =
+                    //     MaterialPageRoute(builder: (c) => QuoteScreen());
+                    // Navigator.push(context, route);
                   },
                   child: Card(
                     elevation: 10,
@@ -1374,11 +1083,7 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-        // SizedBox(height: 10),
-        // Text("    Our Counsellors"),
-        // // CounsellorTile(),
-        // // CounsellorTile(),
-        // Expanded(child: CounsellorTile()),
+        
       ],
     );
   }
@@ -1668,13 +1373,13 @@ class CounsellorTile extends StatelessWidget {
                                                   new Future.delayed(
                                                       new Duration(seconds: 2),
                                                       () {
-                                                    Navigator.of(context).pop();
-                                                    Route route =
-                                                        MaterialPageRoute(
-                                                            builder: (c) =>
-                                                                Cform());
-                                                    Navigator.push(
-                                                        context, route);
+                                                    // Navigator.of(context).pop();
+                                                    // Route route =
+                                                    //     MaterialPageRoute(
+                                                    //         builder: (c) =>
+                                                    //             Cform());
+                                                    // Navigator.push(
+                                                    //     context, route);
                                                   });
                                                 } else {
                                                   SweetAlert.show(context,
@@ -1686,13 +1391,13 @@ class CounsellorTile extends StatelessWidget {
                                                 return false;
                                               });
                                             } else if (repo == "done") {
-                                              Navigator.of(context).pop();
-                                              Route route = MaterialPageRoute(
-                                                  builder: (c) =>
-                                                      BookCounsellor(
-                                                          data: counsellors[
-                                                              index]));
-                                              Navigator.push(context, route);
+                                              // Navigator.of(context).pop();
+                                              // Route route = MaterialPageRoute(
+                                              //     builder: (c) =>
+                                              //         BookCounsellor(
+                                              //             data: counsellors[
+                                              //                 index]));
+                                              // Navigator.push(context, route);
                                             } else {
                                               SweetAlert.show(
                                                 context,
@@ -1733,97 +1438,7 @@ class CounsellorTile extends StatelessWidget {
                                       Container(
                                         width: 111,
                                       ),
-                                      // GestureDetector(
-                                      //   onTap: () async {
-                                      //     // Route route = MaterialPageRoute(
-                                      //     //     builder: (c) => BookCounsellor(data: counsellors[index]));
-                                      //     // Navigator.push(context, route);
-                                      //     SweetAlert.show(
-                                      //       context,
-                                      //       title: "Loading ..",
-                                      //       subtitle: "Please wait...",
-                                      //       style: SweetAlertStyle.loading,
-                                      //     );
-
-                                      //     var repo = await cftest();
-
-                                      //     print(repo);
-
-                                      //     if (repo == "new") {
-                                      //       // SweetAlert.show(
-                                      //       //   context,
-                                      //       //   title: "Warning",
-                                      //       //   subtitle:
-                                      //       //       "   Kindly Navigate to settings to fill Counselling Consent form before  before ",
-                                      //       //   style: SweetAlertStyle.error,
-                                      //       // );
-
-                                      //       SweetAlert.show(context,
-                                      //           subtitle:
-                                      //               "Hello!, Kindly complete the consent form to start booking",
-                                      //           style: SweetAlertStyle.confirm,
-                                      //           showCancelButton: true,
-                                      //           onPress: (bool isConfirm) {
-                                      //         if (isConfirm) {
-                                      //           SweetAlert.show(context,
-                                      //               subtitle: "loading...",
-                                      //               style: SweetAlertStyle
-                                      //                   .loading);
-                                      //           new Future.delayed(
-                                      //               new Duration(seconds: 2),
-                                      //               () {
-                                      //             Navigator.of(context).pop();
-                                      //             Route route =
-                                      //                 MaterialPageRoute(
-                                      //                     builder: (c) =>
-                                      //                         Cform());
-                                      //             Navigator.push(
-                                      //                 context, route);
-                                      //           });
-                                      //         } else {
-                                      //           SweetAlert.show(context,
-                                      //               subtitle: "Canceled!",
-                                      //               style:
-                                      //                   SweetAlertStyle.error);
-                                      //         }
-                                      //         // return false to keep dialog
-                                      //         return false;
-                                      //       });
-                                      //     } else if (repo == "done") {
-                                      //       Navigator.of(context).pop();
-                                      //       Route route = MaterialPageRoute(
-                                      //           builder: (c) => BookCounsellor(
-                                      //               data: counsellors[index]));
-                                      //       Navigator.push(context, route);
-                                      //     } else {
-                                      //       SweetAlert.show(
-                                      //         context,
-                                      //         title: "Warning",
-                                      //         subtitle:
-                                      //             "   Kindly check your internet connection and try again",
-                                      //         style: SweetAlertStyle.error,
-                                      //       );
-                                      //     }
-                                      //   },
-                                      //   child: Container(
-                                      //       margin: EdgeInsets.only(bottom: 10),
-                                      //       height: 40,
-                                      //       width: 100,
-                                      //       child: Center(
-                                      //           child: Text(
-                                      //         "Book",
-                                      //         style: TextStyle(
-                                      //             color: Colors.white,
-                                      //             fontSize: 13,
-                                      //             fontWeight: FontWeight.bold),
-                                      //       )),
-                                      //       decoration: BoxDecoration(
-                                      //         color:
-                                      //             Theme.of(context).accentColor,
-                                      //         borderRadius:
-                                      //             BorderRadius.circular(12),
-                                      //       )),
-                                      // ),
+                                      // 
                                     ],
                                   )
                                 ],
