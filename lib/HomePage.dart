@@ -179,33 +179,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             TabItem(
               icon: const Icon(
-                Icons.star,
-                color: Colors.white,
-              ),
-              title: "Reviews",
-            ),
-            // TabItem(
-            //   icon: const Icon(
-            //     Icons.search,
-            //     color: Colors.white,
-            //   ),
-            //   title: "Counsellors",
-            // ),
-            TabItem(
-              icon: const Icon(
                 Icons.local_activity,
                 color: Colors.white,
               ),
               title: "Bookings",
             ),
+            
 
-            TabItem(
-              icon: const Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              title: "Settings",
-            ),
+            
             TabItem(
               icon: const Icon(
                 Icons.verified_user,
@@ -220,27 +201,33 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           //0xfffaab3),
-          backgroundColor: Color(0xfffaab3b),
+          backgroundColor: Theme.of(context).accentColor,
           title: Container(
-            margin: EdgeInsets.only(
-                top: screenheight * 0.13, left: screenwidth * 0),
-            child: Container(
-              child: Image(
-                image: AssetImage(
-                  'assets/images/logo1.png',
-                ),
-                width: screenwidth * 0.6,
-                // height: screenheight * 0.3,
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          // Text(
-          //   "iCounsel-Gh",
-          //   style: TextStyle(
-          //       color: Theme.of(context).accentColor,
-          //       fontWeight: FontWeight.bold),
+            // margin: EdgeInsets.only(
+            //     top: screenheight * 0.13, left: screenwidth * 0),
+            child:
+            // Container(
+            //   child: 
+            //   // Image(
+            //   //   image: AssetImage(
+            //   //     'assets/images/logo10.png',
+            //   //   ),
+            //   //   width: screenwidth * 0.7,
+            //   //   height: screenheight * 0.9,
+            //   //   fit: BoxFit.fill,
+            //   // ),
+            // ),
           // ),
+          Text(
+            "    Ticket-Gh",
+            
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                ),
+                
+          ),),
           elevation: selectedIndex == 5 ? 8.0 : 0,
           //flexibleSpace: Container(height: 10, color: Colors.blue,),
           bottom: (selectedIndex == 5
@@ -345,78 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        // ChooseCategory(
-                        //     categories: [
-                        //       'Counselling Need',
-                        //       'All Categories',
-                        //       'Academic and Career',
-                        //       'Relationship and Marriage',
-                        //       'Regenerative Health',
-                        //       'Behaviour Modifications',
-                        //       'Crisis and Bereavement',
-                        //       'Addiction',
-                        //       'Financial',
-                        //       'Reproductive Health',
-                        //       'Sexuality Crisis'
-                        //     ],
-                        //     category: category,
-                        //     selected: selected,
-                        //     onChanged: (val) {
-                        //       setState(() {
-                        //         category = val;
-                        //         // print(category);
-                        //         if (category == 'Counselling Need') {
-                        //           hiveBox.put("counsellor_category", "");
-
-                        //           selected = false;
-                        //           // print(selected);
-                        //         } else {
-                        //           hiveBox.put("counsellor_category", val);
-
-                        //           selected = true;
-                        //           // print(selected);
-                        //         }
-                        //       });
-                        //     }),
-                        // ChooseLocation(
-                        //     countries: [
-                        //       'Counsellors location',
-                        //       'Ahafo',
-                        //       'Ashanti',
-                        //       'Bono',
-                        //       'Bono East',
-                        //       'Central',
-                        //       'Eastern',
-                        //       'Greater Accra',
-                        //       'North East',
-                        //       'Northern',
-                        //       'Oti',
-                        //       'Savannah',
-                        //       'Upper East',
-                        //       'Upper West',
-                        //       'Volta',
-                        //       'Western',
-                        //       'Western North'
-                        //     ],
-                        //     country: country,
-                        //     selectedloc: selectedloc,
-                        //     onChanged: (val) {
-                        //       setState(() {
-                        //         country = val;
-                        //         // print(country);
-                        //         if (country == 'Counsellors location') {
-                        //           hiveBox.put("counsellor_location", "");
-
-                        //           selectedloc = false;
-                        //           // print(selectedloc);
-                        //         } else {
-                        //           hiveBox.put("counsellor_location", val);
-
-                        //           selectedloc = true;
-                        //           // print(selectedloc);
-                        //         }
-                        //       });
-                        //     }),
+                       
                       ],
                     ),
                     //color: Colors.blue,
@@ -563,7 +479,7 @@ class _HomeState extends State<Home> {
               width: screenwidth + _addedMargin,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/circles.png'),
+                  image: AssetImage('assets/images/ads1.jpg'),
                   fit: BoxFit.fill,
                 ),
                 borderRadius: BorderRadius.vertical(
@@ -601,7 +517,7 @@ class _HomeState extends State<Home> {
                     width: screenwidth * 0.68,
                     height: screenheight * 0.18,
                     child: Image.asset(
-                      'assets/images/t3.jpg',
+                      'assets/images/ads2.jpg',
                       fit: BoxFit.fill,
                     ),
                   );
@@ -644,45 +560,18 @@ class _HomeState extends State<Home> {
                   width: screenwidth * 0.68,
                   height: screenheight * 0.18,
                   child: Image.asset(
-                    'assets/images/t2.jpg',
+                    'assets/images/ads2.jpg',
                     fit: BoxFit.fill,
                   ),
                 );
               },
             ),
 
-            // Image.asset(
-            //       'assets/images/t1.jpg',
-            //       fit: BoxFit.cover,
-            // ),
-            // Image.asset(
-            //       'assets/images/t2.jpg',
-            //       fit: BoxFit.cover,
-            // ),
-            // Image.asset(
-            //       'assets/images/t3.jpg',
-            //       fit: BoxFit.cover,
-            // ),
+            
           ),
         ),
 
-        Positioned(
-          bottom: screenheight * (-0.016),
-          left: screenwidth * 0.12,
-          child: GestureDetector(
-            onTap: () async {
-              // Route route = MaterialPageRoute(builder: (c) => fdb());
-              // Navigator.push(context, route);
-            },
-            child: Image.asset(
-              "assets/images/motto.png",
-              height: 100,
-              fit: BoxFit.fitHeight,
-            ),
-          ),
-        ),
-
-        // ),
+       
         Positioned(
           top: screenheight * .245,
           left: 0,

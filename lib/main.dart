@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
     //   Theme.of(context).textTheme,
     // ),
     textTheme:GoogleFonts.montserratTextTheme(Theme.of(context).textTheme,),
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.green,
       ), 
 
       
