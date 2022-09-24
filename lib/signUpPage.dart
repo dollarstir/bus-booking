@@ -61,7 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
-    var box = Hive.box("icousel");
+    var box = Hive.box("booking");
 
     return Scaffold(
         body: SafeArea(
@@ -198,7 +198,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     items: [
                       
                       DropdownMenuItem(
-                        child: Text("Sex type"),
+                        child: Text("Select Gender"),
                         value: 1,
                         
                       ),
@@ -436,204 +436,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //   children: [
-            //     // CustomTextFieldDiv(
-            //     //   //controller: ,
-            //     //   controller: _country,
-            //     //   hintText: "Country",
-            //     //   data: Icons.flag,
-            //     //   isObsecure: false,
-            //     // ),
-
-            //     ElevatedButton(
-            //       style: ElevatedButton.styleFrom(
-            //           // primary: Colors.white70,
-
-            //           ),
-            //       onPressed: () {
-            //         showCountryPicker(
-            //           context: context,
-            //           //Optional.  Can be used to exclude(remove) one ore more country from the countries list (optional).
-            //           exclude: <String>['KN', 'MF'],
-            //           //Optional. Shows phone code before the country name.
-            //           showPhoneCode: true,
-            //           onSelect: (Country country) {
-            //             print('Select country: ${country.name}');
-            //             setState(() {
-            //               mycount = country.name;
-            //             });
-            //           },
-            //         );
-            //       },
-            //       child: Text(
-            //         mycount,
-            //         style: TextStyle(color: Colors.white),
-            //       ),
-            //     ),
-
-            //     // CustomTextFieldDiv(
-            //     //   //controller: ,
-            //     //   controller: _region,
-            //     //   hintText: "Region/State",
-            //     //   data: Icons.place,
-            //     //   isObsecure: false,
-            //     // ),
-
-            //     DropdownButton(
-            //       value: dbval1,
-            //       items: [
-
-            //          DropdownMenuItem(
-            //           child: Text("Select Region"),
-            //           value: 1,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Ahafo"),
-            //           value: 2,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Ashanti"),
-            //           value: 3,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Bono"),
-            //           value: 4,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Bono East"),
-            //           value: 5,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Central"),
-            //           value: 6,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Eastern"),
-            //           value: 7,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Greater Accra"),
-            //           value: 8,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("North East"),
-            //           value: 9,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Northern"),
-            //           value: 10,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Oti"),
-            //           value: 11,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Savannah"),
-            //           value: 12,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Upper East"),
-            //           value: 13,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Upper West"),
-            //           value: 14,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Volta"),
-            //           value: 15,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Western"),
-            //           value: 16,
-            //         ),
-            //         DropdownMenuItem(
-            //           child: Text("Western North"),
-            //           value: 17,
-            //         ),
-            //       ],
-            //       onChanged: (int val) {
-            //         setState(() {
-            //           dbval1 = val;
-            //         });
-
-            //         if (val == 1) {
-            //           setState(() {
-            //             myloc = "Select region ";
-            //           });
-            //         }
-            //         else if (val == 2) {
-            //           setState(() {
-            //             myloc = "Ahafo";
-            //           });
-            //         } else if (val == 3) {
-            //           setState(() {
-            //             myloc = "Ashanti";
-            //           });
-            //         } else if (val == 4) {
-            //           setState(() {
-            //             myloc = "Bono";
-            //           });
-            //         } else if (val == 5) {
-            //           setState(() {
-            //             myloc = "Bono East";
-            //           });
-            //         } else if (val == 6) {
-            //           setState(() {
-            //             myloc = "Central";
-            //           });
-            //         } else if (val == 7) {
-            //           setState(() {
-            //             myloc = "Eastern";
-            //           });
-            //         } else if (val == 8) {
-            //           setState(() {
-            //             myloc = "Greater Accra";
-            //           });
-            //         } else if (val == 9) {
-            //           setState(() {
-            //             myloc = "North East";
-            //           });
-            //         } else if (val == 10) {
-            //           setState(() {
-            //             myloc = "Northern";
-            //           });
-            //         } else if (val == 11) {
-            //           setState(() {
-            //             myloc = "Oti";
-            //           });
-            //         } else if (val == 12) {
-            //           setState(() {
-            //             myloc = "Savannah";
-            //           });
-            //         } else if (val == 13) {
-            //           setState(() {
-            //             myloc = "Upper East";
-            //           });
-            //         } else if (val == 14) {
-            //           setState(() {
-            //             myloc = "Upper West";
-            //           });
-            //         } else if (val == 15) {
-            //           setState(() {
-            //             myloc = "Volta";
-            //           });
-            //         } else if (val == 16) {
-            //           setState(() {
-            //             myloc = "Western";
-            //           });
-            //         } else if (val == 17) {
-            //           setState(() {
-            //             myloc = "Western North";
-            //           });
-            //         }
-            //       },
-            //       hint: Text("Select  location "),
-            //     ),
-            //   ],
-            // ),
+            
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

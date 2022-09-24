@@ -103,18 +103,18 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 1),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
             // Text("   Login",
             //     style: TextStyle(
             //         color: Theme.of(context).accentColor,
             //         fontWeight: FontWeight.bold,
             //         fontSize: 20)),
             Image(
-              image: AssetImage("assets/images/bus5.png"),
+              image: AssetImage("assets/images/bus2.png"),
               width: MediaQuery.of(context).size.width * 1,
-              height: MediaQuery.of(context).size.height * 0.31,
+              height: MediaQuery.of(context).size.height * 0.22,
             ),
-            SizedBox(height: 10),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.12),
             CustomTextField(
               //controller: ,
               controller: _email,
