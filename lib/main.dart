@@ -25,7 +25,7 @@ void main() async{
         channelKey: "basic_channel",
         channelName: "Basic Notifications",
         channelDescription: "OnlinTicket" ,
-        defaultColor: Colors.orange,
+        defaultColor: Colors.blueAccent,
         importance: NotificationImportance.High,
         channelShowBadge: true)
   ]);

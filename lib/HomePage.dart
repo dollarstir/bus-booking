@@ -22,6 +22,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import './busbook.dart';
 
 // import 'notifications.dart';
 
@@ -219,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
           // ),
           Text(
-            "    Ticket-Gh",
+            "    Ticket",
             
             style: TextStyle(
                 color: Colors.white,
@@ -355,7 +356,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Icon(
                         Icons.brightness_1,
                         size: 21.0,
-                        color: Color(0xffff7401),
+                        color:Theme.of(context).accentColor,
                       ),
                     ),
                     Positioned(
@@ -394,20 +395,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // Future Getcounsellor() async {
-  //   var resp = await http.get("https://icounselgh.net/cc.php");
-  //   var decoded = jsonDecode(resp.body);
-  //   //  return decoded;
-  //   // print(decoded);
-  //   List<Counsellor> couns = [];
-  //   for (var c in decoded) {
-  //     Counsellor cc = Counsellor(c['id'], c['name'], c['email'], c['contact'],
-  //         c['region'], c['type'], c['status'],c['pic']);
-  //     couns.add(cc);
-  //     // print(couns);
-  //   }
-  //   return couns;
-  // }
+  
   Future ptest() async {
     var box = Hive.box("booking");
     var userid = box.get("userid");
@@ -437,13 +425,7 @@ class _HomeState extends State<Home> {
     });
     var result = jsonDecode(response.body);
     print(result);
-    // // List<Mybooks> mbk = [];
-    // // for (var u in result) {
-    // //   Mybooks mm = Mybooks(
-    // //       u['cname'], u['clocation'], u['ctype'], u['appdate'], u['apptime']);
-    // //   mbk.add(mm);
-    // }
-
+    
     return result;
   }
 
@@ -464,9 +446,7 @@ class _HomeState extends State<Home> {
     return Stack(
       children: [
         SizedBox(width: screenwidth, height: screenheight),
-        // ClipPath(
-        // clipper: SemiCircleClipper(),
-        // child:
+       
         Positioned(
           top: -(_addedMargin * .23),
           bottom: 0,
@@ -485,17 +465,10 @@ class _HomeState extends State<Home> {
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(screenwidth + _addedMargin),
                 ),
-                color: Color(0xfffaab3b),
+                color: Theme.of(context).accentColor,
               ),
 
-              // child :Container(
-              // width: 50,
-              // height: 50,
-              // color: Colors.amberAccent,
-              //   child: Positioned(
-              //     child: Text("kofi"),
-              //   ),
-              // ),
+             
             ),
           ),
         ),
@@ -510,8 +483,7 @@ class _HomeState extends State<Home> {
               future: ads(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  // print("Width: ${(screenwidth * 0.68)}");
-                  // print("Height: ${(screenheight * 0.18)}");
+                 
 
                   return SizedBox(
                     width: screenwidth * 0.68,
@@ -602,41 +574,7 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/awa.png',
                     onTap: () {
-                      // Route route = MaterialPageRoute(
-                      //   builder: (c) => Discover(),
-                      // );
-                      // Navigator.push(context, route);
-                      //   SweetAlert.show(
-                      //     context,
-                      //     title: "Loading ..",
-                      //     subtitle: "Please wait...",
-                      //     style: SweetAlertStyle.loading,
-                      //   );
-
-                      //   var repo = await ptest();
-
-                      //   print(repo);
-
-                      //   if (repo == "pending") {
-                      //     SweetAlert.show(
-                      //       context,
-                      //       title: "Welcome!",
-                      //       subtitle: "Your request is under review",
-                      //       style: SweetAlertStyle.error,
-                      //     );
-                      //   } else if (repo == "approved") {
-                      //     Navigator.of(context).pop();
-                      //     Route route =
-                      //         MaterialPageRoute(builder: (c) => Ctest());
-                      //     Navigator.push(context, route);
-                      //   } else if (repo == "sent") {
-                      //     SweetAlert.show(
-                      //       context,
-                      //       title: "Congrats!!",
-                      //       subtitle: 'Your request is being proccessed',
-                      //       style: SweetAlertStyle.success,
-                      //     );
-                      //   } else if (repo == "failed") {}
+                      
                     },
                   ),
                   SizedBox(
@@ -648,9 +586,9 @@ class _HomeState extends State<Home> {
                     width: screenwidth,
                     image: 'assets/images/stc.png',
                     onTap: () {
-                      // Route route =
-                      //     MaterialPageRoute(builder: (c) => Cregister());
-                      // Navigator.push(context, route);
+                      Route route =
+                          MaterialPageRoute(builder: (c) => Busbook());
+                      Navigator.push(context, route);
                     },
                   ),
                   SizedBox(

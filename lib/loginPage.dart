@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   var uid;
 
   Future mylogin() async {
-    String url = "https://icounselgh.net/app-login";
+    String url = "https://booking.tuceehub.org/app-login";
     final response = await http.post(Uri.parse(url), body: {
       'username': _email.text,
       'password': _password.text,
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
   Future user() async {
     var box = Hive.box("booking");
     var userid = box.get("userid");
-    var userlink = "https://icounselgh.net/user";
+    var userlink = "https://booking.tuceehub.org/user";
     var response = await http.post(
       Uri.parse(userlink),
       body: {'userid': userid},
@@ -58,34 +58,34 @@ class _LoginPageState extends State<LoginPage> {
 
   var mymess;
 
-  Future<void> _showMyDialog() async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text(''),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text("Please wait"),
-                // Image.asset('assets/images/infinity.gif'),
-                Image(image: AssetImage("assets/images/Pulse.gif")),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // Future<void> _showMyDialog() async {
+  //   return showDialog<void>(
+  //     context: context,
+  //     barrierDismissible: false, // user must tap button!
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: const Text(''),
+  //         content: SingleChildScrollView(
+  //           child: ListBody(
+  //             children: <Widget>[
+  //               Text("Please wait"),
+  //               // Image.asset('assets/images/infinity.gif'),
+  //               Image(image: AssetImage("assets/images/Pulse.gif")),
+  //             ],
+  //           ),
+  //         ),
+  //         actions: <Widget>[
+  //           TextButton(
+  //             child: const Text('Cancel'),
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 
   @override
   void initState() {
@@ -157,113 +157,113 @@ class _LoginPageState extends State<LoginPage> {
             GestureDetector(
               onTap: () async {
                 // _showMyDialog();
-                // SweetAlert.show(
-                //   context,
-                //   title: "loading..",
-                //   subtitle: "please wait...",
-                //   showCancelButton: false,
-                //   style: SweetAlertStyle.loading,
-                // );
-                // if (_email.text == "") {
-                //   Navigator.of(context).pop();
-                //   SweetAlert.show(context,
-                //       title: "Warning!",
-                //       subtitle: "please enter email",
-                //       style: SweetAlertStyle.error,
-                //       showCancelButton: false);
-                // } else if (_password.text == "") {
-                //   Navigator.of(context).pop();
-                //   SweetAlert.show(context,
-                //       title: 'Warning!',
-                //       subtitle: "password can not be empty",
-                //       showCancelButton: false,
-                //       style: SweetAlertStyle.error);
-                // } else {
-                //   var resp;
-                //   try {
-                //     resp = await mylogin();
-                //     print(resp);
-                //   } catch (e) {
-                //     return;
-                //   }
+                SweetAlert.show(
+                  context,
+                  title: "loading..",
+                  subtitle: "please wait...",
+                  showCancelButton: false,
+                  style: SweetAlertStyle.loading,
+                );
+                if (_email.text == "") {
+                  Navigator.of(context).pop();
+                  SweetAlert.show(context,
+                      title: "Warning!",
+                      subtitle: "please enter email",
+                      style: SweetAlertStyle.error,
+                      showCancelButton: false);
+                } else if (_password.text == "") {
+                  Navigator.of(context).pop();
+                  SweetAlert.show(context,
+                      title: 'Warning!',
+                      subtitle: "password can not be empty",
+                      showCancelButton: false,
+                      style: SweetAlertStyle.error);
+                } else {
+                  var resp;
+                  try {
+                    resp = await mylogin();
+                    print(resp);
+                  } catch (e) {
+                    return;
+                  }
 
-                //   SweetAlert.show(
-                //     context,
-                //     title: "loading..",
-                //     subtitle: "please wait...",
-                //     showCancelButton: false,
-                //     style: SweetAlertStyle.loading,
-                //   );
+                  SweetAlert.show(
+                    context,
+                    title: "loading..",
+                    subtitle: "please wait...",
+                    showCancelButton: false,
+                    style: SweetAlertStyle.loading,
+                  );
 
-                //   if (resp == "failed") {
-                //     // Navigator.of(context).pop();
-                //     SweetAlert.show(context,
-                //         title: "Sorry",
-                //         subtitle: "Invalid login credentials",
-                //         showCancelButton: false,
-                //         style: SweetAlertStyle.error);
-                //   } else {
-                //     // print(resp);
-                //     // print(resp[0]["name"]);
-                //     setState(() {
-                //       uid = resp[0]['id'];
-                //       mymess = "login successful";
-                //     });
-                //     // print(uid);
-                //     var box = Hive.box("icousel");
-                //     box.put("islog", 1);
-                //     box.put('userid', uid);
-                //     // var repo = await user();
-                //     setState(() {
-                //       uname = resp[0]["name"];
-                //       umail = resp[0]["email"];
-                //       ucontact = resp[0]["contact"];
-                //       ucountry = resp[0]["country"];
-                //       ugender = resp[0]["gender"];
-                //       ustate = resp[0]["state"];
-                //       udob = resp[0]["dob"];
-                //       upass = resp[0]["passcode"];
-                //     });
+                  if (resp == "failed") {
+                    // Navigator.of(context).pop();
+                    SweetAlert.show(context,
+                        title: "Sorry",
+                        subtitle: "Invalid login credentials",
+                        showCancelButton: false,
+                        style: SweetAlertStyle.error);
+                  } else {
+                    // print(resp);
+                    // print(resp[0]["name"]);
+                    setState(() {
+                      uid = resp[0]['id'];
+                      mymess = "login successful";
+                    });
+                    // print(uid);
+                    var box = Hive.box("booking");
+                    box.put("islog", 1);
+                    box.put('userid', uid);
+                    // var repo = await user();
+                    setState(() {
+                      uname = resp[0]["name"];
+                      umail = resp[0]["email"];
+                      ucontact = resp[0]["contact"];
+                      ucountry = resp[0]["country"];
+                      ugender = resp[0]["gender"];
+                      ustate = resp[0]["state"];
+                      udob = resp[0]["dob"];
+                      upass = resp[0]["passcode"];
+                    });
 
-                //     box.put('uname', uname);
-                //     box.put('umail', umail);
-                //     box.put('ucontact', ucontact);
-                //     box.put('ucountry', ucountry);
-                //     box.put('ugender', ugender);
-                //     box.put('ustate', ustate);
-                //     box.put('udob', udob);
-                //     box.put('upass', upass);
+                    box.put('uname', uname);
+                    box.put('umail', umail);
+                    box.put('ucontact', ucontact);
+                    box.put('ucountry', ucountry);
+                    box.put('ugender', ugender);
+                    box.put('ustate', ustate);
+                    box.put('udob', udob);
+                    box.put('upass', upass);
 
-                //     // box.put("userid", value)
-                //     // Navigator.of(context).pop();
-                //     SweetAlert.show(
-                //       context,
-                //       title: "Login successful",
-                //       // subtitle: "Sweet alert is pretty",
-                //       style: SweetAlertStyle.success,
-                //       showCancelButton:
-                //           false, // There won't be any cancel button
-                //       // buttons: false;// There won't be any confirm button
-                //     );
+                    // box.put("userid", value)
+                    // Navigator.of(context).pop();
+                    SweetAlert.show(
+                      context,
+                      title: "Login successful",
+                      // subtitle: "Sweet alert is pretty",
+                      style: SweetAlertStyle.success,
+                      showCancelButton:
+                          false, // There won't be any cancel button
+                      // buttons: false;// There won't be any confirm button
+                    );
 
-                //     Future.delayed(Duration(seconds: 1), () {
-                //       Navigator.of(context).pop();
-                //       Route route =
-                //           MaterialPageRoute(builder: (c) => HomeScreen());
-                //       Navigator.pushReplacement(context, route);
-                //     });
-                //   }
-                // }
-                // SweetAlert.show(context,
-                //       title: "please wait",
-                //       // subtitle: "Sweet alert is pretty",
-                //       // style: SweetAlertStyle.,
-                //       showCancelButton: false,
+                    Future.delayed(Duration(seconds: 1), () {
+                      Navigator.of(context).pop();
+                      Route route =
+                          MaterialPageRoute(builder: (c) => HomeScreen());
+                      Navigator.pushReplacement(context, route);
+                    });
+                  }
+                }
+                SweetAlert.show(context,
+                      title: "please wait",
+                      // subtitle: "Sweet alert is pretty",
+                      // style: SweetAlertStyle.,
+                      showCancelButton: false,
 
-                //       );
+                      );
 
-                Route route = MaterialPageRoute(builder: (c) => HomeScreen());
-                Navigator.push(context, route);
+                // Route route = MaterialPageRoute(builder: (c) => HomeScreen());
+                // Navigator.push(context, route);
               },
               child: Container(
                   //padding: EdgeInsets.all(20),

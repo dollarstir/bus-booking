@@ -15,12 +15,12 @@ import 'dart:async';
 
 import 'package:intl/intl.dart';
 
-class SignUpPage extends StatefulWidget {
+class Busbook extends StatefulWidget {
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _BusbookPageState createState() => _BusbookPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _BusbookPageState extends State<Busbook> {
   TextEditingController _email = TextEditingController();
   TextEditingController _name = TextEditingController();
   TextEditingController _gender = TextEditingController();
@@ -33,7 +33,9 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController _password = TextEditingController();
   var _loginEmail = "";
   var _loginPassword = "";
-  var mycount = "Select Country";
+  var mycount = "Select time ";
+  var mydetination = "Select destination ";
+  var mydeparture = "Select departure ";
 
   var countryValue;
   var stateValue;
@@ -54,8 +56,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   void initState() {
-    mycount = "Select Country";
-    mydob = "Date of Birth";
+    mycount = "Select time";
+    mydob = "Choose Date of Departure";
+    mydetination = "Select destination ";
+   mydeparture = "Select departure ";
     mygend = "";
     super.initState();
   }
@@ -72,104 +76,35 @@ class _SignUpPageState extends State<SignUpPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("   Create an account",
-                    style: TextStyle(
-                        color: Theme.of(context).accentColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
-                Text(
-                  "1/2   ",
-                  style: TextStyle(fontSize: 20),
-                )
-              ],
-            ),
-            SizedBox(height: 30),
-            CustomTextField(
-              //controller: ,
-              controller: _name,
-              hintText: "Full Name",
-              data: Icons.person,
-              isObsecure: false,
-            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Text("   Create an account",
+            //         style: TextStyle(
+            //             color: Theme.of(context).accentColor,
+            //             fontWeight: FontWeight.bold,
+            //             fontSize: 20)),
+            //     Text(
+            //       "1/2   ",
+            //       style: TextStyle(fontSize: 20),
+            //     )
+            //   ],
+            // ),
+          
+            
             SizedBox(
               height: 3,
             ),
-            CustomTextField(
-              //controller: ,
-              controller: _email,
-              hintText: "Email",
-              data: Icons.mail,
-              isObsecure: false,
-            ),
             
-              CustomTextFieldNumber(
-              //controller: ,
-              controller: _contact,
-              hintText: "Contact",
-              data: Icons.contact_phone,
-              isObsecure: false,
-            ),
+            
+             
             
 
             SizedBox(
               height: 3,
             ),
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.only(left: 18, right: 18),
-              child: FlatButton(
-                  // padding: EdgeInsets.only(le),
-
-                  color: Theme.of(context).accentColor,
-                  onPressed: () {
-                    DatePicker.showDatePicker(context,
-                        showTitleActions: true,
-                        minTime: DateTime(DateTime.now().year - 100, 12, 20,
-                            DateTime.now().month, DateTime.now().day),
-                        maxTime: DateTime(DateTime.now().year + 20, 12, 20),
-                        theme: DatePickerTheme(
-                            cancelStyle: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600),
-                            headerColor: Theme.of(context).accentColor,
-                            backgroundColor: Colors.grey[200],
-                            itemStyle: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
-                            doneStyle: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600)),
-                        onChanged: (date) {
-                      print('change $date in time zone ' +
-                          date.timeZoneOffset.inHours.toString());
-                      // Text("You have scheduled a meeting on $date");
-                    }, onConfirm: (date) {
-                      print('confirm $date');
-                      setState(() {
-                       
-                        var date5 = date;
-
-                        var format = DateFormat.yMMMMEEEEd().format(date5);
-
-                        date2 = format.toString();
-                        mydob = date2;
-                        
-                      });
-                      
-                    }, currentTime: DateTime.now(), locale: LocaleType.en);
-                  },
-                  child: Text(
-                    mydob,
-                    style: TextStyle(color: Colors.white),
-                  )),
-            ),
-            SizedBox(height: 15),
+            
 
             Container(
               // color: Colors.orange,
@@ -187,21 +122,47 @@ class _SignUpPageState extends State<SignUpPage> {
                     items: [
                       
                       DropdownMenuItem(
-                        child: Text("Select Gender"),
+                        child: Text("Select departure"),
                         value: 1,
                         
                       ),
                       DropdownMenuItem(
-                        child: Text("Male"),
+                        child: Text("Accra"),
                         value: 2,
                       ),
                       DropdownMenuItem(
-                        child: Text("Female"),
+                        child: Text("Kumasi"),
                         value: 3,
                       ),
                       DropdownMenuItem(
-                        child: Text("Prefer not to say"),
+                        child: Text("Takoradi"),
                         value: 4,
+                      ),
+
+                      DropdownMenuItem(
+                        child: Text("Cape Coast"),
+                        value: 5,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Sunyani"),
+                        value: 6,
+                      ),
+
+                      DropdownMenuItem(
+                        child: Text("Tamale"),
+                        value: 7,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Wa"),
+                        value: 8,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Ho"),
+                        value: 9,
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Bolgatanga"),
+                        value: 10,
                       ),
                     ],
                     onChanged: (int val) {
@@ -211,19 +172,49 @@ class _SignUpPageState extends State<SignUpPage> {
 
                       if (val == 1) {
                         setState(() {
-                          mygend = "Male";
+                          mydeparture = "Accra ";
                         });
                       } else if (val == 2) {
                         setState(() {
-                          mygend = "Male";
+                          mydeparture = "Kumasi";
                         });
                       } else if (val == 3) {
                         setState(() {
-                          mygend = "Female";
+                          mydeparture = "Takoradi";
                         });
                       } else if (val == 4) {
                         setState(() {
-                          mygend = "Prefer not to say";
+                          mydeparture = "cape coast";
+                        });
+                      }
+
+                       else if (val == 5) {
+                        setState(() {
+                          mydeparture = "Sunyani";
+                        });
+                      }
+
+                       else if (val == 6) {
+                        setState(() {
+                          mydeparture = "Tamale";
+                        });
+                      }
+
+                       else if (val == 7) {
+                        setState(() {
+                          mydeparture = "wa";
+                        });
+                      }
+
+                       else if (val == 8) {
+                        setState(() {
+                          mydeparture = "Ho";
+                        });
+                      }
+
+                       else if (val == 9) {
+                        setState(() {
+                          mydeparture = "bolgatanga";
                         });
                       }
                     },
@@ -397,22 +388,64 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
             ),
+
+
+
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(left: 18, right: 18),
+              child: FlatButton(
+                  // padding: EdgeInsets.only(le),
+
+                  color: Theme.of(context).accentColor,
+                  onPressed: () {
+                    DatePicker.showDatePicker(context,
+                        showTitleActions: true,
+                        minTime: DateTime(DateTime.now().year - 100, 12, 20,
+                            DateTime.now().month, DateTime.now().day),
+                        maxTime: DateTime(DateTime.now().year + 20, 12, 20),
+                        theme: DatePickerTheme(
+                            cancelStyle: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                            headerColor: Theme.of(context).accentColor,
+                            backgroundColor: Colors.grey[200],
+                            itemStyle: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                            doneStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600)),
+                        onChanged: (date) {
+                      print('change $date in time zone ' +
+                          date.timeZoneOffset.inHours.toString());
+                      // Text("You have scheduled a meeting on $date");
+                    }, onConfirm: (date) {
+                      print('confirm $date');
+                      setState(() {
+                       
+                        var date5 = date;
+
+                        var format = DateFormat.yMMMMEEEEd().format(date5);
+
+                        date2 = format.toString();
+                        mydob = date2;
+                        
+                      });
+                      
+                    }, currentTime: DateTime.now(), locale: LocaleType.en);
+                  },
+                  child: Text(
+                    mydob,
+                    style: TextStyle(color: Colors.white),
+                  )),
+            ),
+            SizedBox(height: 15),
             
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Already have an account? "),
-                GestureDetector(
-                    onTap: () {
-                      Route route =
-                          MaterialPageRoute(builder: (c) => LoginPage());
-                      Navigator.push(context, route);
-                    },
-                    child: Text("Login",
-                        style: TextStyle(color: Theme.of(context).accentColor)))
-              ],
-            ),
+            
             SizedBox(height: 50),
             GestureDetector(
               onTap: () {

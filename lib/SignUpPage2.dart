@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icounselgh/notifications.dart';
+import './notifications.dart';
 
 import 'loginPage.dart';
 import 'package:hive/hive.dart';
@@ -21,20 +21,20 @@ class _SignUpPage2State extends State<SignUpPage2> {
   String _loginEmail = "";
   String _loginPassword = "";
 
-  var box = Hive.box("icousel");
+  var box = Hive.box("booking");
   var pass;
   var repass;
   var uid;
 
   Future register() async {
-    String regurl = "https://icounselgh.net/reg";
+    String regurl = "https://booking.tuceehub.org/reg";
 
     var uname = box.get("uname");
     var uemail = box.get("uemail");
     var udob = box.get("udob");
     var ucontact = box.get("ucontact");
     var ugender = box.get("ugender");
-    var ucountry = box.get("ucountry");
+    // var ucountry = box.get("ucountry");
     var ustate = box.get("ustate");
     var response = await http.post(Uri.parse(regurl), body: {
       'name': uname,
@@ -42,7 +42,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
       'dob': udob,
       'contact': ucontact,
       'gender': ugender,
-      'country': ucountry,
+      'country': 'Ghana',
       'state': ustate,
       'passcode': _password.text,
     });
@@ -58,9 +58,9 @@ class _SignUpPage2State extends State<SignUpPage2> {
     var udob = box.get("udob");
     var ucontact = box.get("ucontact");
     var ugender = box.get("ugender");
-    var ucountry = box.get("ucountry");
+    // var ucountry = box.get("ucountry");
     var ustate = box.get("ustate");
-    String url = "https://icounselgh.net/app-login";
+    String url = "https://booking.tuceehub.org/app-login";
     final response = await http.post(Uri.parse(url), body: {
       'username': uemail,
       'password': _password.text,
