@@ -36,6 +36,7 @@ class _BusbookPageState extends State<Busbook> {
   var mycount = "Select time ";
   var mydetination = "Select destination ";
   var mydeparture = "Select departure ";
+  var mydate = "Select date ";
 
   var countryValue;
   var stateValue;
@@ -58,6 +59,7 @@ class _BusbookPageState extends State<Busbook> {
   void initState() {
     mycount = "Select time";
     mydob = "Choose Date of Departure";
+    mydate = "Choose Date of Departure";
     mydetination = "Select destination ";
    mydeparture = "Select departure ";
     mygend = "";
@@ -76,34 +78,14 @@ class _BusbookPageState extends State<Busbook> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     Text("   Create an account",
-            //         style: TextStyle(
-            //             color: Theme.of(context).accentColor,
-            //             fontWeight: FontWeight.bold,
-            //             fontSize: 20)),
-            //     Text(
-            //       "1/2   ",
-            //       style: TextStyle(fontSize: 20),
-            //     )
-            //   ],
-            // ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+            
           
             
-            SizedBox(
-              height: 3,
-            ),
+           Container(
             
             
-             
-            
-
-            SizedBox(
-              height: 3,
-            ),
+           ),
             
 
             Container(
