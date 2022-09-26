@@ -50,6 +50,7 @@ class _BusbookPageState extends State<Busbook> {
   var date3;
   var mydob;
   int dpval = 1;
+  var destval = 1;
   var mygend;
 
   var dbval1 = 1;
@@ -83,7 +84,7 @@ class _BusbookPageState extends State<Busbook> {
           
             
            Container(
-            
+
             
            ),
             
@@ -211,161 +212,118 @@ class _BusbookPageState extends State<Busbook> {
 
             SizedBox(height: 25),
             Container(
+              // color: Colors.orange,
               margin: EdgeInsets.only(left: 15, right: 15),
               child: Card(
-                elevation: 2,
+                elevation:2,
+                // color: Colors.orange,
                 child: Container(
                   margin: EdgeInsets.only(left: 15, right: 15),
                   padding: EdgeInsets.only(left: 10),
                   child: DropdownButton(
-                    value: dbval1,
+                    value: destval,
+                   
                     isExpanded: true,
                     items: [
+                      
                       DropdownMenuItem(
-                        child: Text("Select Region"),
+                        child: Text("Select Destination"),
                         value: 1,
+                        
                       ),
                       DropdownMenuItem(
-                        child: Text("Ahafo"),
+                        child: Text("Accra"),
                         value: 2,
                       ),
                       DropdownMenuItem(
-                        child: Text("Ashanti"),
+                        child: Text("Kumasi"),
                         value: 3,
                       ),
                       DropdownMenuItem(
-                        child: Text("Bono"),
+                        child: Text("Takoradi"),
                         value: 4,
                       ),
+
                       DropdownMenuItem(
-                        child: Text("Bono East"),
+                        child: Text("Cape Coast"),
                         value: 5,
                       ),
                       DropdownMenuItem(
-                        child: Text("Central"),
+                        child: Text("Sunyani"),
                         value: 6,
                       ),
+
                       DropdownMenuItem(
-                        child: Text("Eastern"),
+                        child: Text("Tamale"),
                         value: 7,
                       ),
                       DropdownMenuItem(
-                        child: Text("Greater Accra"),
+                        child: Text("Wa"),
                         value: 8,
                       ),
                       DropdownMenuItem(
-                        child: Text("North East"),
+                        child: Text("Ho"),
                         value: 9,
                       ),
                       DropdownMenuItem(
-                        child: Text("Northern"),
+                        child: Text("Bolgatanga"),
                         value: 10,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Oti"),
-                        value: 11,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Savannah"),
-                        value: 12,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Upper East"),
-                        value: 13,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Upper West"),
-                        value: 14,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Volta"),
-                        value: 15,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Western"),
-                        value: 16,
-                      ),
-                      DropdownMenuItem(
-                        child: Text("Western North"),
-                        value: 17,
                       ),
                     ],
                     onChanged: (int val) {
                       setState(() {
-                        dbval1 = val;
+                        destval = val;
                       });
 
                       if (val == 1) {
                         setState(() {
-                          myloc = "Select region ";
+                          mydetination = "Accra ";
                         });
                       } else if (val == 2) {
                         setState(() {
-                          myloc = "Ahafo";
+                          mydetination = "Kumasi";
                         });
                       } else if (val == 3) {
                         setState(() {
-                          myloc = "Ashanti";
+                          mydetination = "Takoradi";
                         });
                       } else if (val == 4) {
                         setState(() {
-                          myloc = "Bono";
+                          mydetination = "cape coast";
                         });
-                      } else if (val == 5) {
+                      }
+
+                       else if (val == 5) {
                         setState(() {
-                          myloc = "Bono East";
+                          mydetination = "Sunyani";
                         });
-                      } else if (val == 6) {
+                      }
+
+                       else if (val == 6) {
                         setState(() {
-                          myloc = "Central";
+                          mydetination = "Tamale";
                         });
-                      } else if (val == 7) {
+                      }
+
+                       else if (val == 7) {
                         setState(() {
-                          myloc = "Eastern";
+                          mydetination = "wa";
                         });
-                      } else if (val == 8) {
+                      }
+
+                       else if (val == 8) {
                         setState(() {
-                          myloc = "Greater Accra";
+                          mydetination = "Ho";
                         });
-                      } else if (val == 9) {
+                      }
+
+                       else if (val == 9) {
                         setState(() {
-                          myloc = "North East";
-                        });
-                      } else if (val == 10) {
-                        setState(() {
-                          myloc = "Northern";
-                        });
-                      } else if (val == 11) {
-                        setState(() {
-                          myloc = "Oti";
-                        });
-                      } else if (val == 12) {
-                        setState(() {
-                          myloc = "Savannah";
-                        });
-                      } else if (val == 13) {
-                        setState(() {
-                          myloc = "Upper East";
-                        });
-                      } else if (val == 14) {
-                        setState(() {
-                          myloc = "Upper West";
-                        });
-                      } else if (val == 15) {
-                        setState(() {
-                          myloc = "Volta";
-                        });
-                      } else if (val == 16) {
-                        setState(() {
-                          myloc = "Western";
-                        });
-                      } else if (val == 17) {
-                        setState(() {
-                          myloc = "Western North";
+                          mydetination = "bolgatanga";
                         });
                       }
                     },
-                    hint: Text("Select  location "),
+                    hint: Text("Select Destination"),
                   ),
                 ),
               ),
