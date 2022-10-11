@@ -61,7 +61,8 @@ dependencies:
   shimmer: ^2.0.0
   awesome_notifications: ^0.6.21
   package_info_plus: ^1.4.2
-  flutter_paystack: ^1.0.6
+  # flutter_paystack: 1.0.6
+  flutterwave: ^1.0.3
 
 dev_dependencies:
   flutter_test:

@@ -14,6 +14,7 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'dart:async';
 
 import 'package:intl/intl.dart';
+import './pay.dart';
 
 class Busbook extends StatefulWidget {
   @override
@@ -330,7 +331,7 @@ class _BusbookPageState extends State<Busbook> {
             ),
 
 
-
+ SizedBox(height: 30),
             Container(
               width: double.infinity,
               margin: EdgeInsets.only(left: 18, right: 18),
@@ -382,38 +383,39 @@ class _BusbookPageState extends State<Busbook> {
                     style: TextStyle(color: Colors.white),
                   )),
             ),
-            SizedBox(height: 15),
+           
             
+
+
 
             
             SizedBox(height: 50),
             GestureDetector(
               onTap: () {
-                if (_name.text == "" ||
-                    _email.text == "" ||
-                    mydob == "Date of Birth" ||
-                    _contact.text == "" ||
-                    mygend == "" ||
+                // if (_name.text == "" ||
+                //     _email.text == "" ||
+                //     mydob == "Date of Birth" ||
+                //     _contact.text == "" ||
+                //     mygend == "" ||
                     
-                    myloc == "") {
-                  SweetAlert.show(context,
-                      title: "Warning",
-                      subtitle: "All field must be field",
-                      style: SweetAlertStyle.error,
-                      showCancelButton: false);
-                } else {
-                  var uname = box.put("uname", _name.text);
-                  var uemail = box.put("uemail", _email.text);
-                  var udob = box.put("udob", mydob);
-                  var ucontact = box.put("ucontact", _contact.text);
-                  var ugender = box.put("ugender", mygend);
-                  // var ucountry = box.put("ucountry", mycount);
-                  var ustate = box.put("ustate", myloc);
+                //     myloc == "") {
+                //   SweetAlert.show(context,
+                //       title: "Warning",
+                //       subtitle: "All field must be field",
+                //       style: SweetAlertStyle.error,
+                //       showCancelButton: false);
+                // } else {
+                //   var uname = box.put("uname", _name.text);
+                //   var uemail = box.put("uemail", _email.text);
+                //   var udob = box.put("udob", mydob);
+                //   var ucontact = box.put("ucontact", _contact.text);
+                //   var ugender = box.put("ugender", mygend);
+                //   // var ucountry = box.put("ucountry", mycount);
+                //   var ustate = box.put("ustate", myloc);
 
-                  Route route =
-                      MaterialPageRoute(builder: (c) =>SignUpPage2());
+                  Route route = MaterialPageRoute(builder: (c) => Pay());
                   Navigator.push(context, route);
-                }
+                // }
               },
               child: Container(
                   //padding: EdgeInsets.all(20),
